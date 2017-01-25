@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Hp
+ * @author gurpreet singh
  */
 public class Student {
     
