@@ -11,22 +11,24 @@ import java.util.Objects;
  *
  * @author gurpreet singh
  */
+
+
+
 public class Student {
+
+
+    String name;
+    String id;
+    String gender;
+    double grade;
     
- private String name;
-       private String id;
-       private String gender;
-       private double grade;
-         public static void main(String[] args) {
-         
-         }
-    public Student() {
-        name="";
-        id="";
-        gender="";
-        grade=0;
+
+
+    public Student(){
+        
     }
 
+    
     public Student(String name, String id, String gender, double grade) {
         this.name = name;
         this.id = id;
@@ -34,61 +36,73 @@ public class Student {
         this.grade = grade;
     }
 
+    
     public String getName() {
         return name;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public double getGrade() {
-        return grade;
-    }
-
+    
     public void setName(String name) {
         this.name = name;
     }
 
+    
+    
+    public String getId() {
+        return id;
+    }
+
+    
+    
     public void setId(String id) {
         this.id = id;
     }
 
+    
+    
+    public String getGender() {
+        return gender;
+    }
+
+    
+    
     public void setGender(String gender) {
         this.gender = gender;
     }
 
+    
+    
+    public double getGrade() {
+        return grade;
+    }
+
+    
+    
     public void setGrade(double grade) {
         this.grade = grade;
     }
 
+   
     
-
     @Override
     public boolean equals(Object obj) {
-       
-        if (obj == null) {
+        if (this == obj) {
+            return true;
+        }                             
+        if (obj == null) {        
             return false;
         }
         if (getClass() != obj.getClass()) {
             return false;
         }
         final Student other = (Student) obj;
-        
+        if (Double.doubleToLongBits(this.grade) != Double.doubleToLongBits(other.grade)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.id, other.name)) {
             return false;
         }
         if (!Objects.equals(this.gender, other.gender)) {
@@ -97,15 +111,13 @@ public class Student {
         return true;
     }
 
+    
+    
     @Override
     public String toString() {
-        
-        return ("{\"Name\":\""+name+"\",\"Id\":\""+id+"\",\"Gender\":\""+gender+"\",\"Grade\":"+grade+"}");
-    }
-    
- 
-    
-       
-    
+        String str ="{\"name\":\""+name+"\",\"id\":\""+id +"\",\"gender\":\""+gender +"\",\"grade\":"+grade +"}";
+       return str;
+   }
+     
+     
 }
-

@@ -7,7 +7,7 @@ package students;
 
 /**
  *
- * @author Hp
+ * @author Gurpreet singh
  */
 public class Students {
 

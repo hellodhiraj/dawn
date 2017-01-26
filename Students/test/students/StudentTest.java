@@ -17,36 +17,24 @@ import static org.junit.Assert.*;
  * @author c0679313
  */
 public class StudentTest {
-    
+
     public StudentTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
-    }
-
-    /**
-     * Test of main method, of class Student.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Student.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -54,55 +42,13 @@ public class StudentTest {
      */
     @Test
     public void testGetName() {
-        System.out.println("getName");
-        Student instance = new Student();
-        String expResult = "";
+
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        String expResult = "Bob";
         String result = instance.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of getId method, of class Student.
-     */
-    @Test
-    public void testGetId() {
-        System.out.println("getId");
-        Student instance = new Student();
-        String expResult = "";
-        String result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getGender method, of class Student.
-     */
-    @Test
-    public void testGetGender() {
-        System.out.println("getGender");
-        Student instance = new Student();
-        String expResult = "";
-        String result = instance.getGender();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getGrade method, of class Student.
-     */
-    @Test
-    public void testGetGrade() {
-        System.out.println("getGrade");
-        Student instance = new Student();
-        double expResult = 0.0;
-        double result = instance.getGrade();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -110,12 +56,24 @@ public class StudentTest {
      */
     @Test
     public void testSetName() {
-        System.out.println("setName");
-        String name = "";
-        Student instance = new Student();
-        instance.setName(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        instance.setName("Bob");
+        String expResult = "Bob";
+        String result = instance.getName();
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of getId method, of class Student.
+     */
+    @Test
+    public void testGetId() {
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        String expResult = "c12";
+        String result = instance.getId();
+        assertEquals(expResult, result);
+
     }
 
     /**
@@ -123,12 +81,24 @@ public class StudentTest {
      */
     @Test
     public void testSetId() {
-        System.out.println("setId");
-        String id = "";
-        Student instance = new Student();
-        instance.setId(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        instance.setId("c12");
+        String expResult = "c12";
+        String result = instance.getId();
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of getGender method, of class Student.
+     */
+    @Test
+    public void testGetGender() {
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        String expResult = "Male";
+        String result = instance.getGender();
+        assertEquals(expResult, result);
+
     }
 
     /**
@@ -136,12 +106,24 @@ public class StudentTest {
      */
     @Test
     public void testSetGender() {
-        System.out.println("setGender");
-        String gender = "";
         Student instance = new Student();
-        instance.setGender(gender);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.setGender("Male");
+        String expResult = "Male";
+        String result = instance.getGender();
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of getGrade method, of class Student.
+     */
+    @Test
+    public void testGetGrade() {
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        double expResult = 91.3;
+        double result = instance.getGrade();
+        assertEquals(expResult, result, 0.0);
+
     }
 
     /**
@@ -149,43 +131,90 @@ public class StudentTest {
      */
     @Test
     public void testSetGrade() {
-        System.out.println("setGrade");
-        double grade = 0.0;
+        Student instance = new Student("Bob", "c12", "Male", 91.3);
+        instance.setGender("Male");
+        double expResult = 91.3;
+        double result = instance.getGrade();
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    /**
+     * Test of hashCode method, of class Student.
+     */
+    @Test
+    public void testEqualsWithNonStudentObject() {
+        Object ob = null;
         Student instance = new Student();
-        instance.setGrade(grade);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean expResult = false;
+        boolean result = instance.equals(ob);
+        assertEquals(expResult, result);
+
     }
 
     /**
      * Test of equals method, of class Student.
      */
     @Test
-    public void testEquals() {
-        System.out.println("equals");
-        Object obj = null;
-        Student instance = new Student();
-        boolean expResult = false;
-        boolean result = instance.equals(obj);
+    public void testEqualStudentWithSameNameAndId() {
+        Student stu1 = new Student("Len", "c12", "Male", 91.3);
+        Student stu2 = new Student("Len", "c12", "Male", 91.3);
+        boolean expResult = true;
+        boolean result = stu1.equals(stu2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    
+
     }
 
     /**
      * Test of toString method, of class Student.
      */
     @Test
-    public void testToString() {
-        System.out.println("toString");
-        Student instance = new Student();
-        String expResult = "";
-        String result = instance.toString();
+    public void testEqualStudentWithSameNameAndDifferentId() {
+        Student stu1 = new Student("Jim", "c12", "Male", 91.3);
+        Student stu2 = new Student("Jim", "c13", "Male", 91.3);
+        boolean expResult = false;
+        boolean result = stu1.equals(stu2);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-    
+
+    @Test
+    public void testEqualStudentWithSameIDAndDifferentName() {
+        Student stu1 = new Student("Len", "c12", "Male", 91.3);
+        Student stu2 = new Student("Jim", "c12", "Male", 91.3);
+        boolean expResult = false;
+        boolean result = stu1.equals(stu2);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testEqualStudentWithDifferentNameAndId() {
+        Student stu1 = new Student("Len", "c12", "Male", 91.3);
+        Student stu2 = new Student("Jim", "c13", "Male", 91.3);
+        boolean expResult = false;
+        boolean result = stu1.equals(stu2);
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testtoStringWithInitializedObject() {
+        Student stu1 = new Student("Len", "c12", "Male", 91.3);
+        //String expResult = "(\"gender\":\"Male\",\"grade\":\"91.3\",\"name\":\"Len\",\"id\":\"c12\")";
+        String expResult = "{\"name\":\"Len\",\"id\":\"c12\",\"gender\":\"Male\",\"grade\":91.3}";
+        String result = stu1.toString();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testStudentDefaultConstructorObject() {
+        Student stu = new Student();
+        boolean result = false;
+        boolean expResult = true;
+        if(stu.getName()==null && stu.getId()==null && stu.getGender()==null)
+        {
+          result  =true;
+        }
+        assertEquals(expResult, result);
+
+    }
 
 }

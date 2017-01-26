@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author c0679313
+ * @author c0683339
  */
 public class StudentsTest {
     
@@ -48,5 +48,6 @@ public class StudentsTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+
     
 }
