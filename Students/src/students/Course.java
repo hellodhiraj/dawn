@@ -5,14 +5,17 @@
  */
 package students;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 /**
  *
- * @author c0683339
+ * @author c0679313
  */
+
+ 
 public class Course {
     
     
@@ -71,8 +74,4 @@ public class Course {
     public Map<String, Set<Student>> getGradeMap(){
     return null;
 }
-}
-    
-
-    
-
+}    
